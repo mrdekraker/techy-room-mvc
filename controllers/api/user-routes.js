@@ -60,12 +60,16 @@ router.post(`/`, (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    // add twitter, github, and linkedin
+    twitter: req.body.twitter,
+    github: req.body.github,
+    linkedin: req.body.linkedin,
   }).then((dbUserData) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
-      // add twitter, github, and linkedin
+      req.session.twitter = dbUserData.twitter;
+      req.session.github = dbUserData.github;
+      req.session.linkedin = dbUserData.linkedin;
       req.session.loggedIn = true;
 
       res.json(dbUserData);
@@ -97,7 +101,9 @@ router.post(`/login`, (req, res) => {
       // Declare session variables
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
-      // add twitter, github, and linkedin
+      req.session.twitter = dbUserData.twitter;
+      req.session.github = dbUserData.github;
+      req.session.linkedin = dbUserData.linkedin;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: `You are now logged in!` });

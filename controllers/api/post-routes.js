@@ -17,12 +17,12 @@ router.get('/', (req, res) => {
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username'], // add twitter, github, and linkedin
+          attributes: ['username', ['twitter'], ['github'], ['linkedin']],
         },
       },
       {
         model: User,
-        attributes: ['username'], // add twitter, github, and linkedin
+        attributes: ['username', ['twitter'], ['github'], ['linkedin']],
       },
     ],
   })
@@ -44,14 +44,14 @@ router.get(`/:id`, (req, res) => {
       // Comment model: includes the username to comment
       {
         model: User,
-        attributes: ['username'], // add twitter, github, and linkedin
+        attributes: ['username', ['twitter'], ['github'], ['linkedin']],
       },
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username'], // add twitter, github, and linkedin
+          attributes: ['username', ['twitter'], ['github'], ['linkedin']],
         },
       },
     ],
