@@ -32,3 +32,7 @@ const commentData = [
     comment_text: 'I think you are right.',
   },
 ];
+
+const seedComments = () => Comment.bulkCreate(commentData);
+
+module.exports = seedComments;
