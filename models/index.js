@@ -1,46 +1,46 @@
-// Set up models and export them
-
-// User Model
+// import our 3 models created in the other files
 const User = require('./User');
-// Post Model
 const Post = require('./Post');
-// Comment model
 const Comment = require('./Comment');
 
-// Create associations
-// User/Post relationship
+// creating an association will add a foreign key constraint to the attributes
+
+// Creates a 1:m association between User and Posts
+// combines one user to multiple posts
+// adds a foreign key to target and plural association mixins to the source
 User.hasMany(Post, {
+  // as foreign key to User
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
 });
 
+// associations where the foreign key for the 1:1 relation exists on the source model - in this case, Post
 Post.belongsTo(User, {
+  // allows us to set source model key in the through relation
+  // adds foreign key to Post
+  // by default, the target key for a belongsTo relation will be the target models' primary key
   foreignKey: 'user_id',
+  // set cascade if foreignKey does not allow nulls
+  onDelete: 'cascade',
 });
 
-// Comment/User relationship
+// adds a foreign key and singular association mixins to the source
 Comment.belongsTo(User, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+  onDelete: 'cascade',
 });
 
-// Comment/Post relationship
 Comment.belongsTo(Post, {
   foreignKey: 'post_id',
-  onDelete: 'CASCADE',
+  onDelete: 'cascade',
 });
 
-// User/Comment relationship
 User.hasMany(Comment, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+  onDelete: 'cascade',
 });
 
-// Post/Comment relationship
 Post.hasMany(Comment, {
   foreignKey: 'post_id',
-  onDelete: 'CASCADE',
+  onDelete: 'cascade',
 });
-
-// Export Models
 module.exports = { User, Post, Comment };

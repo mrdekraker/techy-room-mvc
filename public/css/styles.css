@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.wrapper {
+  /* height: 100vh; */
+  width: 100%;
+}
+
+.navbar {
+  margin: 2rem 5rem;
+  border-bottom: 1px solid #999999;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  font-size: 1.6rem;
+}
+.card {
+  width: 75%;
+  margin: 2rem 0;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  border: 1px solid #999999;
+  transition: all 0.2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.card-body {
+  font-size: 1.4rem;
+}
+
+footer {
+  margin: 1rem 2rem;
+  border-top: 1px solid #999999;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  position: sticky;
+  bottom: 0;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 33rem;
+  padding: 1.5rem;
+  margin: auto;
+}

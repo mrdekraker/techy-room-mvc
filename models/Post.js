@@ -27,13 +27,9 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // Set up post_url column
-    post_url: {
-      type: DataTypes.STRING,
+    content: {
+      type: DataTypes.TEXT,
       allowNull: false,
-      validate: {
-        isURL: true,
-      },
     },
     // Set up user_id column
     user_id: {
@@ -47,8 +43,6 @@ Post.init(
   {
     // Pass in imported sequelize connection (the direct connection to our database)
     sequelize,
-    // Don't automatically create createdAt/updatedAt timestamp fields
-    timestamps: true,
     // Don't pluralize name of database table
     freezeTableName: true,
     // Use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
@@ -57,3 +51,5 @@ Post.init(
     modelName: 'post',
   }
 );
+
+module.exports = Post;

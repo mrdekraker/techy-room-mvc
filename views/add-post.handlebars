@@ -1,0 +1,28 @@
+<main class="form-signin text-center">
+  <h3>New Post</h3>
+  <form id="add-post-form" class="card-body">
+    <div class="form-floating">
+      <label for="post-title" class="form-label"></label>
+      <input
+        type="text"
+        name="post-title"
+        class="form-input"
+        autofocus="true"
+        placeholder="Title"
+      />
+    </div>
+    <div class="form-floating">
+      <label for="content" class="form-label"></label>
+      <textarea
+        name="content"
+        id="content"
+        class="form-input"
+        aria-label="With textarea"
+        placeholder="What do you want to say?"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg-btn-info">Create</button>
+  </form>
+</main>
+
+<script src="/js/add-post.js"></script>

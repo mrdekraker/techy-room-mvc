@@ -105,3 +105,6 @@ dist
 
 acceptance.md
 package-lock.json
+
+setup.html
+setup.css
