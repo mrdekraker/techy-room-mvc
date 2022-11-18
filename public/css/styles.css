@@ -8,6 +8,11 @@ html {
   margin: 0px;
 }
 
+main {
+  /* center the content */
+  margin: 0 auto;
+}
+
 .wrapper {
   /* height: 100vh; */
   width: 100%;
@@ -26,9 +31,10 @@ html {
 .nav-links {
   font-size: 1.6rem;
 }
+
 .card {
   width: 75%;
-  margin: 2rem 0;
+  margin: 2rem auto;
   /* display: flex; */
   /* flex-wrap: wrap; */
   justify-content: space-around;
@@ -57,13 +63,35 @@ footer {
   justify-content: center;
   text-align: center;
   font-size: 1.2rem;
-  position: sticky;
-  bottom: 0;
+  /* position: sticky; */
+  /* bottom: 0; */
 }
 
 .form-signin {
   width: 100%;
-  max-width: 33rem;
+  max-width: 50%;
   padding: 1.5rem;
   margin: auto;
+  font-size: 1.4rem;
+}
+
+.btn {
+  border: 1px solid #999999;
+  font-size: 1.4rem;
+}
+
+.form-floating {
+  margin: 1rem 0;
+}
+
+.post-form > input,
+.post-form > textarea {
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
